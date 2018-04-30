@@ -1,4 +1,6 @@
 <?php
+require_once('/var/www/html/includes/classes/Account.php');
+$account = new Account();
 
 function sanitizeFormUsername($inputText) {
     $inputText = strip_tags($inputText);
@@ -28,10 +30,8 @@ if(isset($_POST['registerButton'])) {
 
     $wasSuccessful = $account->register($username, $email, $password1, $password2, $firstname, $lastname);
     if($wasSuccessful) {
-        echo 'Registration was succsessful';
-    } else { echo 'Registration failed'; }; 
-
-    echo 'Registration was but nobody know how it did';
+        echo 'Registration was succsessful<br>';
+    } else { echo 'Registration failed<br>'; }; 
 };
 
 ?>

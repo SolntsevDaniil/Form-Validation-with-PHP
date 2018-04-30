@@ -1,7 +1,6 @@
 <?php
-    include('includes/classes/Account.php');
-    include('includes/handlers/register-handlers.php');
-    include('includes/handlers/login-handlers.php');
+    require_once('includes/classes/Account.php');
+    require_once('includes/handlers/register-handlers.php');
 ?>
 
 <!DOCTYPE html>
@@ -33,14 +32,17 @@
     <form action="includes/handlers/register-handlers.php" id="registerForm" method="POST">
         <h2>Create your free account</h2>
         <p>
+            <?php echo ; ?>
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
         </p>
         <p>
+            <?php echo $account->getError('Your first name must be between 2 and 25 characters'); ?>
             <label for="firstName">First Name</label>
             <input type="text" id="firstName" name="firstName" required>
         </p>
         <p>
+            <?php echo $account->getError('Your last name must be between 2 and 25 characters'); ?>
             <label for="lastName">Last Name</label>
             <input type="text" id="lastName" name="lastName" required>
         </p>

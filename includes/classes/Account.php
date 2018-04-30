@@ -58,18 +58,17 @@ class Account {
     }
 
     private function validateFirstName($firstname) {
-        if(strlen($username) > 25 || strlen($username) < 2) {
+        if(strlen($firstname) > 25 || strlen($firstname) < 2) {
             array_push($this->errorArray, 'Your first name must be between 2 and 25 characters');
             return;
         };
     }
 
     private function validateLastName($lastname) {
-        if(strlen($username) > 25 || strlen($username) < 2) {
+        if(strlen($lastname) > 25 || strlen($lastname) < 2) {
             array_push($this->errorArray, 'Your last name must be between 2 and 25 characters');
             return;
         };
     }
 };
-
 ?>
